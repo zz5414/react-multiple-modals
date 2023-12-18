@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { ModalsDispatchContext, ModalsStateContext } from "./ModalsContext";
+import Modals from "./Modals";
 
 const ModalsProvider = ({ children }) => {
   // openModals는 [Component, props]의 리스트 형태
@@ -29,6 +30,7 @@ const ModalsProvider = ({ children }) => {
     <ModalsStateContext.Provider value={openModals}>
       <ModalsDispatchContext.Provider value={dispatch}>
         {children}
+        <Modals />
       </ModalsDispatchContext.Provider>
     </ModalsStateContext.Provider>
   );
