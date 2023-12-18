@@ -7,12 +7,16 @@ const ModalsProvider = ({ children }) => {
 
   const open = (Component, props) => {
     setOpenedModals((modals) => {
+      console.log("open");
+      console.log(modals);
       return [...modals, { Component, props }];
     });
   };
 
   const close = (Component) => {
     setOpenedModals((modals) => {
+      console.log("close");
+      console.log(modals);
       return modals.filter((modal) => {
         return modal.Component !== Component;
       });
