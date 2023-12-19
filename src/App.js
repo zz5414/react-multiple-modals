@@ -1,13 +1,13 @@
 import "./styles.css";
-import MyModal from "./MyModal";
 import useModals from "./useModal";
+import { modals } from "./Modals";
 
 export default function App() {
   const { openModal } = useModals();
 
   const handleClick = () => {
     console.log("모달을 열었습니다.");
-    openModal(MyModal, {
+    openModal(modals.myModal, {
       onSubmit: () => {
         console.log("로직 처리....");
       },
