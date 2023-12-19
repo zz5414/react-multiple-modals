@@ -1,6 +1,7 @@
 import "./styles.css";
 import useModals from "./useModal";
 import { modals } from "./Modals";
+import ABC from "./component/ABC";
 
 export default function App() {
   const { openModal } = useModals();
@@ -18,6 +19,7 @@ export default function App() {
     <div className="App">
       <h1>Hello React</h1>
       <button onClick={handleClick}>Open Modal</button>
+      <ABC />
     </div>
   );
 }
