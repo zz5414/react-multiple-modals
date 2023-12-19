@@ -7,7 +7,11 @@ export default function App() {
 
   const handleClick = () => {
     console.log("모달을 열었습니다.");
-    openModal(MyModal, { foo: "bar" });
+    openModal(MyModal, {
+      onSubmit: () => {
+        console.log("로직 처리....");
+      },
+    });
   };
 
   return (
