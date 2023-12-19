@@ -13,13 +13,15 @@ graph TD;
 
     ModalsStateContext --> Modals.js
 
-    MyModal.js --> App.js
+    %% MyModal.js --> App.js
     useModal.js --> App.js
+    Modals.js --> App.js
 
     ModalsDispatchContext --> useModal.js
 
     %% Modals.js에서 state에 저장된 component를 렌더링
-    MyModal.js -.-> Modals.js
+    %% MyModal.js -.-> Modals.js
+    MyModal.js --> Modals.js
 
     %% 확인, 취소 버튼의 함수를 전달하기 위해
     ModalsDispatchContext --> Modals.js

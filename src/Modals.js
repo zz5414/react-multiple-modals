@@ -1,9 +1,11 @@
+import loadable from "@loadable/component";
 import { useContext } from "react";
 import { ModalsDispatchContext, ModalsStateContext } from "./ModalsContext";
-import MyModal from "./MyModal";
 
 export const modals = {
-  myModal: MyModal,
+  //   myModal: MyModal,
+  myModal: loadable(() => import("./modals/MyModal")),
+  abcModal: loadable(() => import("./modals/abc_modal")),
 };
 
 const Modals = () => {
