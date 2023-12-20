@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import useModals from "../useModal";
 import { modals } from "../Modals";
+import { useModals } from "../recoil_atom";
 
 export default function ABC() {
   const { openModal } = useModals();

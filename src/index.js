@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import ReactModal from "react-modal";
 import App from "./App";
-import ModalsProvider from "./ModalsProvider";
+import { RecoilRoot } from "recoil";
+import Modals from "./Modals";
 
 ReactModal.setAppElement("#root");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <ModalsProvider>
+  <RecoilRoot>
+    <React.StrictMode>
       <App />
-    </ModalsProvider>
-  </React.StrictMode>
+      <Modals />
+    </React.StrictMode>
+  </RecoilRoot>
 );

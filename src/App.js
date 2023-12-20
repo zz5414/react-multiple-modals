@@ -1,16 +1,15 @@
 import "./styles.css";
-import useModals from "./useModal";
 import { modals } from "./Modals";
 import ABC from "./component/ABC";
+import { useModals } from "./recoil_atom";
 
 export default function App() {
   const { openModal } = useModals();
 
   const handleClick = () => {
-    console.log("모달을 열었습니다.");
     openModal(modals.myModal, {
       onSubmit: () => {
-        console.log("로직 처리....");
+        console.log("로직...");
       },
     });
   };
@@ -18,6 +17,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Hello React</h1>
+
       <button onClick={handleClick}>Open Modal</button>
       <ABC />
     </div>

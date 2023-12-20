@@ -1,6 +1,6 @@
 import ReactModal from "react-modal";
-import useModals from "../useModal";
 import { modals } from "../Modals";
+import { useModals } from "../recoil_atom";
 
 const MyModal = ({ onSubmit, onClose }) => {
   const { openModal } = useModals();

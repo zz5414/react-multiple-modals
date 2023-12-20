@@ -1,6 +1,7 @@
 import loadable from "@loadable/component";
 import { useContext } from "react";
-import { ModalsDispatchContext, ModalsStateContext } from "./ModalsContext";
+import { useRecoilValue } from "recoil";
+import { openedModalsAtom, useModals } from "./recoil_atom";
 
 export const modals = {
   //   myModal: MyModal,
@@ -9,14 +10,15 @@ export const modals = {
 };
 
 const Modals = () => {
-  const openedModals = useContext(ModalsStateContext);
-  const { close } = useContext(ModalsDispatchContext);
+
+  const openedModals = useRecoilValue(openedModalsAtom);
+  const { closeModal } = useModals();
 
   return openedModals.map((modal, index) => {
     const { Component, props } = modal;
     const { onSubmit, ...restProps } = props;
     const onClose = () => {
-      close(Component);
+      closeModal(Component);
     };
 
     const handleSubmit = async () => {
